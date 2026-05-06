@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Tool Box</title>
+    <title>BorrowBox - Community Toolbox</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#" class="nav-logo">
-            Tool<span>Share</span>
-        </a>
-        
+
+    <!-- Navigation Bar -->
+    <nav>
+            <div class="logo-area" onclick="navigate('home')">
+                <div class="logo">🛠️ Borrow<span>Box</span></div>
+                <span class="tagline">Ask once. Build together.</span>
+            </div>
         <ul class="nav-links">
-            <li><a href="#browse">Home</a></li>
-            <li><a href="#my-garage">Toolbox</a></li>
-            <li><a href="#stats">Lend</a></li>
-            <li>
-                <a href="#register" class="btn-register">
-                    <span class="btn-text-fix">Lend a Tool</span>
-                </a>
-            </li>
+            <li id="nav-home" class="active" onclick="navigate('home')">Home</li>
+            <li id="nav-toolbox" onclick="navigate('toolbox')">Toolbox</li>
+            <li id="nav-history" onclick="navigate('history')">Transaction History</li>
         </ul>
     </nav>
-</body>
-</html>
