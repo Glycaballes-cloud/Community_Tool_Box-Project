@@ -1,5 +1,3 @@
-// script.js
-
 // --- 1. State Management (Mock Database) ---
 let tools = [
     { id: 1, name: "Power Drill", category: "Power Tools", totalQty: 3, availableQty: 3 },
