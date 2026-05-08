@@ -142,3 +142,40 @@
         </div>
     </div>
 
+    <!-- Contribute a Tool -->
+      <section id="addtools" class="section">
+            <h2>Adding a Tools</h2>    
+            <p>Adding new tools to the system for others to borrow.</p> 
+            
+            <div class="contribution-form">
+                <div class="contribution-instructions">
+                    <label for="contrib-name">Tool Name</label>
+                    <input type="text" id="contrib-name" placeholder="e.g. Cordless Drill">
+                </div>
+                <div class="contribution-instructions">
+                    <label for="contrib-category">Category</label>
+                    <select id="contrib-category">
+                        <option>Hand Tools</option>
+                        <option>Power Tools</option>
+                        <option>Gardening Tools</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                <div class="contribution-instructions">
+                    <label for="contrib-desc">Description (Optional)</label>
+                    <input type="text" id="contrib-desc" placeholder="Details about the tool">
+                </div>
+               
+                <div class="btn-wrapper">
+                <button class="btn btn-action" onclick="contributeTool()">
+                    Add Tool to System
+                </button>
+                </div>
+
+                <!-- Container to show the results -->
+                <div id="tool-display-area">
+                    <h3>Current Inventory</h3>
+                    <ul id="tool-list"></ul>
+                </div>
+        </section>
+
