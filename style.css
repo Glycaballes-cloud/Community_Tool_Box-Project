@@ -44,6 +44,49 @@ nav {
   display: flex;
   gap: 20px;
 }
+
+/* --- Main Container --- */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Sections --- */
+.section {
+  display: none;
+  margin: 25px 0;
+}
+
+.section.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* --- Grid Layout: Stats --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* --- Controls Layout --- */
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* --- Footer Layout --- */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
 /* ---------------------------*/
 .logo-area { 
     cursor: pointer; 
