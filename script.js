@@ -48,3 +48,13 @@ let tools = [
 let transactions = [];
 let inventory = [];
 
+/* ---------- Navigation ---------- */
+function navigate(sectionId) {
+  hideAllSections();
+  deactivateNavItems();
+
+  document.getElementById(sectionId).classList.add('active');
+  document.getElementById(`nav-${sectionId}`).classList.add('active');
+
+  renderSection(sectionId);
+}
