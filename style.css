@@ -87,26 +87,3 @@ main {
   gap: 30px;
 }
 
-/* ---------------------------*/
-.logo-area { 
-    cursor: pointer; 
-}
-
-.logo { 
-    font-size: 1.8rem; 
-    font-weight: bold; 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-}
-
-.logo span { 
-    color: var(--secondary); 
-}
-
-.tagline { 
-    font-size: 0.85rem; 
-    color: #bdc3c7; 
-    font-style: italic; 
-}
