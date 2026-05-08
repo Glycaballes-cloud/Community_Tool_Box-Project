@@ -25,15 +25,26 @@ body {
   color: var(--text-dark);
 }
 
-/* Navigation */
-nav { 
-    background-color: var(--primary); 
-    color: white; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1rem 2rem; 
+/* =========================================================
+   3. LAYOUT (Grid / Flex Containers)
+========================================================= */
+
+/* --- Navigation Layout (Block: nav) --- */
+nav {
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+/* ---------------------------*/
 .logo-area { 
     cursor: pointer; 
 }
