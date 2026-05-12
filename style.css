@@ -151,3 +151,44 @@ main {
   color: #bdc3c7;
   font-style: italic;
 }
+
+/* --- Navigation Items (Block: nav-links) --- */
+.nav-links li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links li:hover,
+.nav-links li.active {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--secondary);
+}
+
+/* --- Section Titles --- */
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* --- Card Component (Block: stat-card) --- */
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.stat-card h3 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #666;
+  font-weight: 500;
+}
