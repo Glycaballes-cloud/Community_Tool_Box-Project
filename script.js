@@ -84,3 +84,30 @@ function renderToolbox() {
     .filter(tool => filterTool(tool, searchStr, category, status))
     .forEach(tool => tbody.appendChild(createToolRow(tool)));
 }
+
+/* ---------- Borrowing ---------- */
+function openBorrowModal(toolId) {
+  const tool = tools.find(t => t.id === toolId);
+
+  dom.modalToolName().innerText = tool.name;
+  dom.modalToolId().value = tool.id;
+  dom.borrowerReturnDate().value = getDefaultReturnDate();
+
+  dom.modal().classList.add('active');
+}
+
+function closeModal() {
+  dom.modal().classList.remove('active');
+  clearBorrowForm();
+}
+
+function submitBorrow() {
+  const data = getBorrowFormData();
+
+  if (!validateBorrowForm(data)) {
+    alert("Please fill out all borrower details.");
+    return;
+  }
+
+  processBorrow(data);
+}
