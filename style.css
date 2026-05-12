@@ -245,3 +245,81 @@ th {
   background: #d5f5e3;
   color: var(--success);
 }
+
+/* --- Button Component (Block: btn, Modifiers) --- */
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-action {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* --- Modal Content --- */
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* --- Form Elements --- */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.contribution-instructions input,
+.contribution-instructions select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* --- Add Tools Section (Block: addtools) --- */
+#addtools {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 75px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contribution-form {
+  text-align: left;
+}
