@@ -201,3 +201,47 @@ main {
   border-radius: 4px;
   flex: 1;
 }
+
+/* --- Table Component --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* --- Badge Component (Block: badge, Modifier: state) --- */
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.badge.available {
+  background: #d5f5e3;
+  color: var(--success);
+}
+
+.badge.borrowed {
+  background: #fadbd8;
+  color: var(--danger);
+}
+
+.badge.completed {
+  background: #d5f5e3;
+  color: var(--success);
+}
