@@ -192,3 +192,12 @@ main {
   color: #666;
   font-weight: 500;
 }
+
+/* --- Controls Inputs --- */
+.controls input,
+.controls select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
