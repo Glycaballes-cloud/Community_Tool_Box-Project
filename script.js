@@ -137,3 +137,28 @@ function returnTool(transactionId) {
 
   renderHistory();
 }
+
+/* ---------- Contributions ---------- */
+function contributeTool() {
+  const name = dom.contribName().value.trim();
+  const category = dom.contribCategory().value;
+
+  if (!name) {
+    alert("Please enter a tool name.");
+    return;
+  }
+
+  const existing = tools.find(t => t.name.toLowerCase() === name.toLowerCase());
+
+  if (existing) {
+    existing.totalQty++;
+    existing.availableQty++;
+    alert(`✅ "${existing.name}" quantity increased!`);
+  } else {
+    tools.push(createNewTool(name, category));
+    alert(`✅ New tool "${name}" added!`);
+  }
+
+  clearContributionForm();
+  refreshUI();
+}
