@@ -111,3 +111,29 @@ function submitBorrow() {
 
   processBorrow(data);
 }
+
+/* ---------- Transactions ---------- */
+function renderHistory() {
+  const tbody = dom.historyBody();
+  tbody.innerHTML = '';
+
+  const sorted = [...transactions].sort((a, b) => b.id - a.id);
+
+  if (!sorted.length) {
+    return renderEmptyHistory(tbody);
+  }
+
+  sorted.forEach(tx => tbody.appendChild(createHistoryRow(tx)));
+}
+
+function returnTool(transactionId) {
+  const tx = transactions.find(t => t.id === transactionId);
+  const tool = tools.find(t => t.id === tx.toolId);
+
+  if (!confirm(`Confirm ${tx.toolName} has been returned by ${tx.borrowerName}?`)) return;
+
+  tx.status = 'Completed';
+  tool.availableQty++;
+
+  renderHistory();
+}
