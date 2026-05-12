@@ -70,3 +70,17 @@ function renderDashboard() {
 
   calculateUtilizationData();
 }
+
+/* ---------- Toolbox ---------- */
+function renderToolbox() {
+  const tbody = dom.toolboxBody();
+  tbody.innerHTML = '';
+
+  const searchStr = dom.searchInput().value.toLowerCase();
+  const category = dom.categoryFilter().value;
+  const status = dom.statusFilter().value;
+
+  tools
+    .filter(tool => filterTool(tool, searchStr, category, status))
+    .forEach(tool => tbody.appendChild(createToolRow(tool)));
+}
