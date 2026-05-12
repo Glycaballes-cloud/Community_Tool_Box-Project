@@ -124,3 +124,30 @@ main {
   justify-content: center;
   margin-top: 15px;
 }
+
+/* =========================================================
+   4. COMPONENTS (BEM-STYLE ORGANIZATION)
+========================================================= */
+
+/* --- Logo (Block: logo) --- */
+.logo-area {
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--secondary);
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #bdc3c7;
+  font-style: italic;
+}
