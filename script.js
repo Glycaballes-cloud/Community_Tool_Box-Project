@@ -58,3 +58,15 @@ function navigate(sectionId) {
 
   renderSection(sectionId);
 }
+
+/* ---------- Dashboard ---------- */
+function renderDashboard() {
+  const totalTools = tools.reduce((sum, t) => sum + t.totalQty, 0);
+  const availableTools = tools.reduce((sum, t) => sum + t.availableQty, 0);
+
+  dom.statTotal().innerText = totalTools;
+  dom.statAvailable().innerText = availableTools;
+  dom.statBorrowed().innerText = totalTools - availableTools;
+
+  calculateUtilizationData();
+}
