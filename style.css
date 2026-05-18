@@ -1,5 +1,5 @@
 /* =========================================================
-    CSS VARIABLES / ROOT
+   1. CSS VARIABLES / ROOT
 ========================================================= */
 :root {
   --primary: #2c3e50;
@@ -10,8 +10,9 @@
   --danger: #e74c3c;
 }
 
+
 /* =========================================================
-    RESET / GLOBAL STYLES
+   2. RESET / GLOBAL STYLES
 ========================================================= */
 * {
   margin: 0;
@@ -24,6 +25,7 @@ body {
   background-color: var(--bg-light);
   color: var(--text-dark);
 }
+
 
 /* =========================================================
    3. LAYOUT (Grid / Flex Containers)
@@ -96,8 +98,6 @@ main {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-
-  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -124,6 +124,7 @@ main {
   justify-content: center;
   margin-top: 15px;
 }
+
 
 /* =========================================================
    4. COMPONENTS (BEM-STYLE ORGANIZATION)
@@ -246,6 +247,12 @@ th {
   color: var(--success);
 }
 
+.badge.ongoing {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+
 /* --- Button Component (Block: btn, Modifiers) --- */
 .btn {
   padding: 8px 15px;
@@ -273,6 +280,21 @@ th {
 .btn:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+.add-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 28px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* --- Modal Content --- */
@@ -322,4 +344,74 @@ th {
 
 .contribution-form {
   text-align: left;
+}
+
+/* --- Footer Component --- */
+footer {
+  background: var(--primary);
+  color: white;
+  margin-top: auto;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+.footer-section h4 {
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-section ul a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+
+/* =========================================================
+   5. ANIMATIONS
+========================================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* =========================================================
+   6. MEDIA QUERIES
+========================================================= */
+/* Example structure (add responsive rules if needed)*/
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
 }
