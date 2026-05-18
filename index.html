@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BorrowBox - Community Toolbox</title>
     <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gly.css">
 </head>
 <body>
 
@@ -18,13 +18,13 @@
         <ul class="nav-links">
             <li id="nav-home" class="active" onclick="navigate('home')">Home</li>
             <li id="nav-toolbox" onclick="navigate('toolbox')">Toolbox</li>
-            <li id="nav-history" onclick="navigate('history')">Transaction History</li>
-            <li id="nav-addtools" onclick="navigate('addtools')">Add Tools</li>
+            <li id="nav-history" onclick="navigate('history')">Lending Transaction</li>
+            <li id="nav-historylog" onclick="navigate('historylog')">History</li>
             <li id="nav-about" onclick="navigate('about')">About</li>
         </ul>
     </nav>
 
-     <main>
+    <main>
         <!-- Home Dashboard -->
         <section id="home" class="section active">
             <h2 class="section-title">Dashboard Overview</h2>
@@ -58,7 +58,9 @@
 
         <!-- Toolbox Section -->
         <section id="toolbox" class="section">
-            <h2>Central Inventory Management</h2>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Central Inventory Management</h2>
+            </div>
             
             <div class="controls">
                 <input type="text" id="searchInput" placeholder="Search tools by name..." onkeyup="renderToolbox()">
@@ -66,7 +68,7 @@
                     <option value="all">All Categories</option>
                     <option value="Power Tools">Power Tools</option>
                     <option value="Hand Tools">Hand Tools</option>
-                    <option value="Gardening">Gardening</option>
+                    <option value="Gardening">Gardening Tools</option>
                 </select>
                 <select id="statusFilter" onchange="renderToolbox()">
                     <option value="all">All Statuses</option>
@@ -89,12 +91,12 @@
                     <!-- Tool rows populated by JS -->
                 </tbody>
             </table>
+            <button class="add-btn" onclick="navigate('addtools')">+</button>
         </section>
 
-          <!-- Transaction History Section -->
+        <!-- Transaction History Section -->
         <section id="history" class="section">
-            <h2>Borrowing & Lending Activity</h2>
-            <br>
+            <h2>Lending Transactions</h2><br>
             <table>
                 <thead>
                     <tr>
@@ -112,33 +114,58 @@
         </section>
     </main>
 
+    <!-- History Log Page -->
+     <section id="historylog" class="section">
+        <h2>Transaction History</h2><br>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Tool Name</th>
+                <th>Details</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody id="historylog-body">
+            <!-- Filled by JS -->
+            </tbody>
+        </table>
+    </section>
+
     <!-- Borrow Tool Modal -->
     <div id="borrowModal" class="modal">
         <div class="modal-content">
             <h2>Borrow Tool: <span id="modalToolName"></span></h2>
+
+            <form onsubmit="submitBorrow(); return false;">
             <input type="hidden" id="modalToolId">
-            
+
             <div class="form-group">
                 <label>Borrower Name</label>
                 <input type="text" id="bName" required>
             </div>
+
             <div class="form-group">
                 <label>Contact Information</label>
                 <input type="text" id="bContact" placeholder="Phone or Email" required>
             </div>
+
             <div class="form-group">
                 <label>Unit / Address</label>
                 <input type="text" id="bAddress" required>
             </div>
+
             <div class="form-group">
                 <label>Expected Return Date</label>
                 <input type="date" id="bReturnDate" required>
             </div>
-            
+
             <div class="modal-actions">
-                <button class="btn" onclick="closeModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="submitBorrow()">Confirm Borrow</button>
+                <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Confirm Borrow</button>
             </div>
+            </form>
         </div>
     </div>
 
@@ -172,14 +199,15 @@
                 </button>
                 </div>
 
-                <!-- Container to show the results -->
-                <div id="tool-display-area">
-                    <h3>Current Inventory</h3>
-                    <ul id="tool-list"></ul>
-                </div>
-        </section>
 
-    <!-- Footer Section -->
+            <!-- Container to show the results -->
+            <div id="tool-display-area">
+                <h3>Current Inventory</h3>
+                <ul id="tool-list"></ul>
+            </div>
+    </section>
+
+ <!-- Footer Section -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -207,6 +235,6 @@
     </footer>
 
     <!-- Link to external JS file -->
-    <script src="script.js"></script>
+    <script src="gly.js"></script>
 </body>
 </html>
